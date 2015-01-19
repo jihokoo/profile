@@ -8,8 +8,11 @@ extern crate rustful_macros;
 extern crate rustful;
 
 use std::io::{File, IoResult};
+use std::os::getenv;
+use std::io::net::ip::{Port};
 use std::sync::{Arc, RwLock};
 use std::error::Error;
+use std::str::FromStr;
 
 use rustful::{Server, Context, Response, Handler, TreeRouter};
 use rustful::cache::{CachedValue, CachedProcessedFile};
@@ -36,12 +39,18 @@ fn main() {
         }
     };
 
-    let server_result = Server::new().port(8080).handlers(router).run();
+    let server_result = Server::new().port(get_server_port()).handlers(router).run();
 
     match server_result {
         Ok(_server) => {},
         Err(e) => println!("could not start server: {}", e.description())
     }
+}
+
+fn get_server_port() -> Port {
+    getenv("PORT")
+        .and_then(|s| FromStr::from_str(s.as_slice()))
+        .unwrap_or(8080)
 }
 
 fn read_string(mut file: IoResult<File>) -> IoResult<Option<String>> {
