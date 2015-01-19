@@ -3,3 +3,6 @@
 name = "profile"
 version = "0.0.1"
 authors = ["Ji Ho Koo <jihokoo@gmail.com>"]
+
+[dependencies.iron]
+git = "https://github.com/jihokoo/iron.git"
