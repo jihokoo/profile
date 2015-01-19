@@ -1,1 +1,1 @@
-web: ./taget/profile
+web: ./target/profile
