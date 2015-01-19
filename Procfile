@@ -1,1 +1,1 @@
-web: ./target/profile
+web: ./target/release/profile
