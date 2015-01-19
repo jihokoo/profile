@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ji Ho Koo</title>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      background: rgb(23, 23, 23);
+      color: white;
+      text-rendering: optimizeLegibility;
+    }
+
+    h1 {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    li {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .container {
+      margin: 50px auto;
+      padding: 50px;
+      width: 950px;
+      text-transform: uppercase;
+    }
+
+    .container > h1 {
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+
+    .container > .link-container {
+      list-style: none;
+      margin: 25px 0;
+      width: 30%;
+      float: left;
+      display: inline-block;
+    }
+
+    .container > .quote {
+      font-family: 'Open Sans', sans-serif;
+      width: 70%;
+      float: right;
+      display: inline-block;
+      text-align: right;
+    }
+
+    .container > .quote > .author {
+      margin-right: 12px;
+    }
+
+    .container a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .container > .link-container > li,
+    .container > .link-container a {
+      width: 60px;
+    }
+
+    .container > .link-container > li:hover,
+    .container > .link-container a:hover {
+      background: white;
+      color: black;
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 950px) {
+      .container {
+        padding: 5%;
+        width: 90%;
+      }
+    }
+
+    @media only screen and (max-width: 874px) {
+      .container {
+        padding: 5%;
+        width: 90%;
+      }
+
+      .container > .quote {
+        width: 100%;
+        float: left;
+        text-align: left;
+        margin-top:10px;
+      }
+    }
+  </style>
+</head>
+  <body>
+    <div class="container">
+      <h1>Ji Ho Koo</h1>
+      <ul class="link-container">
+        <li class="selector" target="_blank"><a href="https://linkedin.com/in/jihokoo">LinkedIn</a></li>
+        <li class="selector" target="_blank"><a href="https://github.com/jihokoo">Github</a></li>
+        <li class="selector" target="_blank"><a href="https://twitter.com/jihokoo">Twitter</a></li>
+      </ul>
+      <div class="quote">
+        "The limits of my language are the limits of my mind"
+        <br>
+        <span class="author">- Ludwig Wittgenstein</span>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      (function($) {
+          "use strict";
+          $.fn.flicker = function(method) {
+          this.defaults = {
+              minOpacity: 0.7,
+              maxOpacity: 1,
+              transition: 200,
+              delay: 75,
+              probability: 0.1
+          };
+              var methods = {
+                  init : function(options) {
+                      var settings = $.extend({}, this.defaults, options);
+                      return this.each(function() {
+                          var $element = $(this),
+                               element = this;
+                          $element.data("flicker", $.extend({}, settings, {
+                              active: true
+                          }));
+                          methods.flick($element);
+                      });
+                  },
+                  flick: function flick ($target) {
+                      var o     = $target.data("flicker"),
+                          probability = Math.random(),
+                          transition  = Math.random() * o.transition,
+                          delay       = Math.random() * o.delay,
+                          flash       = Math.random() * (o.maxOpacity - o.minOpacity) + o.minOpacity;
+                      if ($target.data("flicker").active === false) {
+                          return false;
+                      }
+                      if (probability > o.probability) {
+                          setTimeout(function() {
+                              flick($target);
+                          }, delay);
+                      } else {
+                          $target.animate({ opacity: flash}, transition)
+                                 .delay(delay)
+                                 .animate({ opacity: o.maxOpacity }, transition, function() {
+                              flick($target);
+                          });
+                      }
+                  },
+                  stop: function() {
+                      this.each(function() {
+                          $(this).data("flicker").active = false;
+                      });
+                  }
+              };
+              if (methods[method]) {
+                  return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+              } else if (typeof method === 'object' || !method) {
+                  return methods.init.apply(this, arguments);
+              } else {
+                  $.error( 'Method "' +  method + '" does not exist in the flicker plugin!');
+              }
+          };
+      })(window.jQuery);
+    </script>
+    <script>
+        $.fn.flicker.defaults = {
+            minOpacity: 0.7,
+            maxOpacity: 1,
+            transition: 200,
+            delay: 75,
+            probability: 0.1
+        };
+
+        $("li").hover(function(){
+          $(this).flicker()
+        }, function(){
+          $(this).flicker("stop")
+        });
+    </script>
+  </body>
+</html>
