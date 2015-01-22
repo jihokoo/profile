@@ -35,6 +35,11 @@ fn main() {
                 page: page.clone(),
                 value: value.clone(),
                 operation: None
+            },
+            "/*" => Get: Profile{
+                page: page.clone(),
+                value: value.clone(),
+                operation: None
             }
         }
     };
