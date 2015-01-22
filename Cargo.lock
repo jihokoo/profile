@@ -2,7 +2,7 @@
 name = "profile"
 version = "0.0.1"
 dependencies = [
- "rustful 0.1.0-pre (git+https://github.com/jihokoo/rustful.git)",
+ "rustful 0.1.0-pre (git+https://github.com/Ogeon/rustful)",
  "rustful_macros 0.1.0-pre (git+https://github.com/Ogeon/rustful)",
 ]
 
@@ -19,18 +19,18 @@ dependencies = [
 
 [[package]]
 name = "gcc"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "hyper"
-version = "0.1.1"
-source = "git+https://github.com/jihokoo/hyper.git#67beb80ee2b2b81690e160fb504b7c770eeed7ac"
+version = "0.1.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "cookie 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.1.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "mime 0.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "mucell 0.1.10 (git+https://github.com/jihokoo/mucell.git)",
+ "mucell 0.1.11 (registry+https://github.com/rust-lang/crates.io-index)",
  "openssl 0.2.16 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc-serialize 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -70,8 +70,8 @@ dependencies = [
 
 [[package]]
 name = "mucell"
-version = "0.1.10"
-source = "git+https://github.com/jihokoo/mucell.git#2e0409a81c4c85ee5b0bae93a19c01f7a62200ee"
+version = "0.1.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "openssl"
@@ -87,12 +87,12 @@ version = "0.2.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "libressl-pnacl-sys 2.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
- "pkg-config 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "pkg-config 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "pkg-config"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -113,10 +113,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "rustful"
 version = "0.1.0-pre"
-source = "git+https://github.com/jihokoo/rustful.git#bad56eaf1bdbcc4022005e64621e3cede747b652"
+source = "git+https://github.com/Ogeon/rustful#56c6f4cbff2ea3ab37de95da3f2a81c0662c33b0"
 dependencies = [
- "hyper 0.1.1 (git+https://github.com/jihokoo/hyper.git)",
- "rustful_macros 0.1.0-pre (git+https://github.com/jihokoo/rustful.git)",
+ "hyper 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rustful_macros 0.1.0-pre (git+https://github.com/Ogeon/rustful)",
  "time 0.1.12 (registry+https://github.com/rust-lang/crates.io-index)",
  "url 0.2.16 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
@@ -127,16 +127,11 @@ version = "0.1.0-pre"
 source = "git+https://github.com/Ogeon/rustful#56c6f4cbff2ea3ab37de95da3f2a81c0662c33b0"
 
 [[package]]
-name = "rustful_macros"
-version = "0.1.0-pre"
-source = "git+https://github.com/jihokoo/rustful.git#bad56eaf1bdbcc4022005e64621e3cede747b652"
-
-[[package]]
 name = "time"
 version = "0.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "gcc 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "gcc 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
