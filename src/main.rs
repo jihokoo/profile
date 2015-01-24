@@ -21,7 +21,7 @@ use rustful::StatusCode::InternalServerError;
 use rustful::header::ContentType;
 
 fn main() {
-    println!("Visit http://localhost:8080 to try this example.");
+    println!("Listening on port 8080...");
 
     //Cache the page
     let page = Arc::new(CachedProcessedFile::new(Path::new("src/views/index.html"), None, read_string));

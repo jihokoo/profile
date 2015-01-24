@@ -1,4 +1,4 @@
-URL="https://s3.amazonaws.com/jihokoo-profile/2015-01-19/rust-nightly-x86_64-unknown-linux-gnu.tar.gz"
-VERSION="2015-01-19"
-CARGO_URL="https://s3.amazonaws.com/jihokoo-profile/2015-01-19/cargo-nightly-x86_64-unknown-linux-gnu.tar.gz"
-CARGO_VERSION="2015-01-19"
+URL="https://s3.amazonaws.com/jihokoo-profile/2015-01-22/rust-nightly-x86_64-unknown-linux-gnu.tar.gz"
+VERSION="2015-01-22"
+CARGO_URL="https://s3.amazonaws.com/jihokoo-profile/2015-01-22/cargo-nightly-x86_64-unknown-linux-gnu.tar.gz"
+CARGO_VERSION="2015-01-22"
